@@ -31,7 +31,6 @@ const (
 )
 
 func NewMCPServer() *server.MCPServer {
-
 	hooks := &server.Hooks{}
 
 	hooks.AddBeforeAny(func(ctx context.Context, id any, method mcp.MCPMethod, message any) {
@@ -352,7 +351,6 @@ func handleSendNotification(
 	ctx context.Context,
 	request mcp.CallToolRequest,
 ) (*mcp.CallToolResult, error) {
-
 	server := server.ServerFromContext(ctx)
 
 	err := server.SendNotificationToClient(
